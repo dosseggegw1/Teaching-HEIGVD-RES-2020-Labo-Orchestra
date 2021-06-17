@@ -1,23 +1,16 @@
+// Musician app
+// Gwendoline Dössegger & Cassandre Wojciechowski
 
-
-var dgram = require('dgram');
-var socket = dgram.createSocket('udp4');
+const dgram = require('dgram');
+const socket = dgram.createSocket('udp4');
 const { v4: uuidv4 } = require('uuid');
 
 const PORT = 4444;
-const ADD_MULTICAST = 239.255.22.5;
+const ADD_MULTICAST = "239.255.22.5";
 
-console.log("I play " + process.argv[2]);
+console.log("I play the " + process.argv[2]);
 
-
-
-var musician = {
-	musicianUuid : uuidv4(),
-	sound : getSound(process.argv[2])
-};
-
-
-// Get sound of the instrument
+// Get the sound of the instrument given in argument
 function getSound(instrument){
 	switch(instrument){
 		case "piano":
@@ -33,10 +26,22 @@ function getSound(instrument){
 	}
 }
 
-function playMusic(){	
-	socket.send(Buffer.from(JSON.stringify(musician), PORT, ADDR_MULTICAST);
+// Setting the id and the sound of the musician
+var musician = {
+	musician_uuid : uuidv4(),
+	sound : getSound(process.argv[2])
+};
+
+// Setting the message to send on the network
+var payload = JSON.stringify(musician);
+const msg = Buffer.from(payload);
+
+// Sending the message
+function playMusic(){
+	socket.send(msg, 0, msg.length, PORT, ADD_MULTICAST);
+	console.log("Send payload to " + ADD_MULTICAST + " on port " + PORT);
 }
 
-
-// Send the sound every second 
+// Send the message every second
 setInterval(playMusic,1000);
+

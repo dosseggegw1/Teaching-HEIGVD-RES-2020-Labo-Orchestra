@@ -1,0 +1,10 @@
+{
+	"name": "musician",
+	"author": "Gwendoline Dössegger & Cassandre Wojciechowski",
+	"version": "1.0.0",
+	"description": "A musician emits a sound according to the instrument we asked him to play via UDP protocol",
+	"main": "app.js",
+	"dependencies": {
+		"uuid": "^8.3.2"
+	}
+}
