@@ -1,4 +1,4 @@
-// Audito app
+// Auditor app
 // Gwendoline Dössegger & Cassandre Wojciechowski
 
 const PORT_UDP = 4444;

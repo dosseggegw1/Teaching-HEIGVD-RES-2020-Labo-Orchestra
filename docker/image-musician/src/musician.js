@@ -8,7 +8,10 @@ const { v4: uuidv4 } = require('uuid');
 const PORT = 4444;
 const ADD_MULTICAST = "239.255.22.5";
 
-console.log("I play the " + process.argv[2]);
+if(process.argv.length != 3) {
+	console.log("We need 3 arguments : node musician.js < instrument >.");
+	process.exit(1);
+}
 
 // Get the sound of the instrument given in argument
 function getSound(instrument){
@@ -23,8 +26,13 @@ function getSound(instrument){
 			return "gzi-gzi";
 		case "drum":
 			return "boum-boum";
+		default:
+			console.log("This instrument does not exist.");
+			process.exit(1);
 	}
 }
+
+console.log("I play the " + process.argv[2]);
 
 // Setting the id and the sound of the musician
 var musician = {

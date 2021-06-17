@@ -3,7 +3,7 @@
   "author": "Gwendoline Dössegger & Cassandre Wojciechowski",
   "version": "1.0.0",
   "description": "An auditor listens to the sounds emitted by the musicians via UDP, keeps a list of active musicians and sends that list via TCP",
-  "main": "app.js",
+  "main": "auditor.js",
   "dependencies": {
     "moment": "^2.29.1",
     "uuid": "^8.3.2"
