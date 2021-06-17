@@ -132,7 +132,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | In Node.js, how can we execute a function on a **periodic** basis? |
 | | On peut utiliser la méthode `setInterval()`.  |
 |Question | In Node.js, how can we **emit UDP datagrams**? |
-| | Nous émettons des datagrammes UDP avec `dgram` et un socket créé avec `dgram.createSocket('udp4')`. | 
+| | Nous émettons des datagrammes UDP avec `dgram` et un socket créé avec `dgram.createSocket('udp4')`. |
 |Question | In Node.js, how can we **access the command line arguments**? |
 | | Avec le code suivant : `process.argv[]` et entre les crochets l'index de position de l'argument que l'on souhaite récupérer.  |
 
