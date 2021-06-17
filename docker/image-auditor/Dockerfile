@@ -5,4 +5,4 @@ WORKDIR /opt/app/
 
 RUN npm install
 
-ENTRYPOINT ["node", "musician.js"]
+ENTRYPOINT ["node", "auditor.js"]
